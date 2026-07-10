@@ -114,6 +114,7 @@ def cache_or_call(output_name, call_prompt):
         print('call %s' % output_name)
         output_response = purify_str(call_deepseek_api(call_prompt))
         print(output_response)
+        os.makedirs(os.path.dirname(output_name), exist_ok=True)
         with open(output_name, "w", encoding="utf-8") as f:
             f.write(output_response)
         return output_response
