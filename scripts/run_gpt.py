@@ -42,7 +42,7 @@ def get_data(data_name):
         return
 
 data_path = get_data(datasets_name)
-with open(r"data\Software_Quality_RQ2.jsonl", encoding='utf-8') as f:
+with open(data_path, encoding='utf-8') as f:
     for line in f:
         record = json.loads(line.strip())
         raw_text_data.append(record["analyze_text"])
